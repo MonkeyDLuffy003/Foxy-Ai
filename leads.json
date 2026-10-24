@@ -1,0 +1,150 @@
+[
+  {
+    "id": "lead-20261024-174421",
+    "timestamp": "2026-10-24T17:44:21.866134+00:00",
+    "client_ref": "Dr. Adams",
+    "raw_brief": "Need an AI dental chatbot for my clinic with FAQ answers",
+    "spec": {
+      "client_ref": "Direct Intake Lead",
+      "type": "chatbot",
+      "features": [
+        "faq"
+      ],
+      "platform": [
+        "web"
+      ],
+      "constraints": [
+        "within standard free tier limits"
+      ]
+    },
+    "match": {
+      "status": "matched",
+      "template_id": "gemini-ai-chatbot",
+      "template_name": "Gemini AI Web Assistant",
+      "confidence": 0.55,
+      "matched_keywords": [
+        "faq",
+        "web"
+      ],
+      "repo_url": "https://github.com/vyshu-ops/template-gemini-chatbot",
+      "free_tier_limits": "Runs 100% on Gemini free tier and free GitHub Pages / Vercel hosting.",
+      "reason": "Deterministic match on 2 keyword(s) with confidence 0.55"
+    },
+    "build_path": "builds/lead-20261024-174421/",
+    "build_summary": {
+      "mode": "matched_template",
+      "template_id": "gemini-ai-chatbot",
+      "files_created": 5,
+      "file_list": [
+        "README.md",
+        "config.json",
+        "app.js",
+        "index.html",
+        "foxy_manifest.json"
+      ],
+      "build_path": "builds/lead-20261024-174421/"
+    },
+    "review": {
+      "status": "pending",
+      "notes": "Awaiting Teja review before manual client submission.",
+      "approved_by": null,
+      "timestamp": null
+    }
+  },
+  {
+    "id": "lead-202610-001",
+    "timestamp": "2026-10-24T09:15:00Z",
+    "client_ref": "Dr. Sarah Adams (Apex Dental Clinic)",
+    "raw_brief": "We need a clean website chatbot for our dental clinic that answers patient FAQs regarding appointments, accepted insurances, and office hours. Needs to run on our existing website without expensive ongoing server fees.",
+    "spec": {
+      "type": "chatbot",
+      "features": [
+        "patient faqs",
+        "insurance lookup",
+        "office hours",
+        "appointment routing"
+      ],
+      "platform": [
+        "web",
+        "react",
+        "html"
+      ],
+      "constraints": [
+        "embeddable on existing website",
+        "free tier friendly",
+        "no high recurring fees"
+      ]
+    },
+    "match": {
+      "template_id": "gemini-ai-chatbot",
+      "template_name": "Gemini AI Web Assistant",
+      "confidence": 0.88,
+      "status": "matched",
+      "matched_keywords": [
+        "chatbot",
+        "faq",
+        "dental",
+        "clinic",
+        "web",
+        "assistant"
+      ]
+    },
+    "build_path": "builds/lead-202610-001/",
+    "build_summary": {
+      "mode": "matched_template",
+      "files_created": 4,
+      "brand_swapped": "Apex Dental Clinic",
+      "primary_language": "typescript"
+    },
+    "review": {
+      "status": "pending",
+      "notes": "Starter configured with clinic FAQ prompt. Awaiting Teja review before manual delivery.",
+      "approved_by": null,
+      "timestamp": null
+    }
+  },
+  {
+    "id": "lead-202610-002",
+    "timestamp": "2026-10-24T10:02:00Z",
+    "client_ref": "Marcus Sterling (Luxury Real Estate)",
+    "raw_brief": "Looking for a custom proprietary 3D virtual tour photogrammetry viewer that synchronizes with our local MLS broker database and performs proprietary LIDAR point cloud mesh rendering on mobile devices.",
+    "spec": {
+      "type": "app",
+      "features": [
+        "3d photogrammetry",
+        "lidar point cloud",
+        "mls sync",
+        "mobile webgl"
+      ],
+      "platform": [
+        "webgl",
+        "threejs",
+        "mobile"
+      ],
+      "constraints": [
+        "complex proprietary algorithms",
+        "custom database sync"
+      ]
+    },
+    "match": {
+      "template_id": null,
+      "template_name": null,
+      "confidence": 0.12,
+      "status": "needs_custom_build",
+      "matched_keywords": []
+    },
+    "build_path": "builds/lead-202610-002/",
+    "build_summary": {
+      "mode": "skeleton_only",
+      "files_created": 3,
+      "brand_swapped": "Sterling 3D MLS",
+      "primary_language": "skeleton"
+    },
+    "review": {
+      "status": "pending",
+      "notes": "No matching starter found. Custom architectural skeleton generated. Estimate 3-5 days engineering.",
+      "approved_by": null,
+      "timestamp": null
+    }
+  }
+]

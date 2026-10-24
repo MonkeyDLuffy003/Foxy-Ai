@@ -1,0 +1,16 @@
+{
+  "lead_id": "lead-20261024-174421",
+  "client": "Dr. Adams",
+  "template_id": "gemini-ai-chatbot",
+  "build_mode": "matched_template",
+  "features": [
+    "faq"
+  ],
+  "files": [
+    "README.md",
+    "config.json",
+    "app.js",
+    "index.html"
+  ],
+  "instructions": "Starter codebase scaffolded and brand tokens swapped. Teja approval required before manual delivery."
+}

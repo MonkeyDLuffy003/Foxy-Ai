@@ -1,0 +1,44 @@
+[
+  {
+    "id": "run-20261024-174421",
+    "timestamp": "2026-10-24T17:44:21.866816+00:00",
+    "lead_id": "lead-20261024-174421",
+    "action": "pipeline_execution",
+    "pipeline_steps": {
+      "intake": "success",
+      "match": "matched (gemini-ai-chatbot)",
+      "build": "5 files in builds/lead-20261024-174421/",
+      "report": "telegram_notified_teja",
+      "stop": "halted_for_human_review"
+    },
+    "operator": "foxy-agent (vyshu sub-agent)"
+  },
+  {
+    "id": "run-20261024-001",
+    "timestamp": "2026-10-24T09:15:22Z",
+    "lead_id": "lead-202610-001",
+    "action": "pipeline_execution",
+    "pipeline_steps": {
+      "intake": "success",
+      "match": "matched (gemini-ai-chatbot, score: 0.88)",
+      "build": "scaffolded 4 files into builds/lead-202610-001/",
+      "report": "telegram_notified_teja",
+      "stop": "halted_for_human_review"
+    },
+    "operator": "foxy-agent (vyshu sub-agent)"
+  },
+  {
+    "id": "run-20261024-002",
+    "timestamp": "2026-10-24T10:02:18Z",
+    "lead_id": "lead-202610-002",
+    "action": "pipeline_execution",
+    "pipeline_steps": {
+      "intake": "success",
+      "match": "needs_custom_build (score: 0.12)",
+      "build": "generated skeleton files into builds/lead-202610-002/",
+      "report": "telegram_notified_teja",
+      "stop": "halted_for_human_review"
+    },
+    "operator": "foxy-agent (vyshu sub-agent)"
+  }
+]

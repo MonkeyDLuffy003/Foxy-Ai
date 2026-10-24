@@ -1,0 +1,12 @@
+{
+  "clientName": "Apex Dental Clinic",
+  "botRole": "Friendly Patient Care Assistant",
+  "themeColor": "#f97316",
+  "welcomeMessage": "Hello! Welcome to Apex Dental Clinic. I can help answer questions about accepted insurances, appointment scheduling, and office hours.",
+  "quickActions": [
+    "Accepted Insurances",
+    "Office Hours & Location",
+    "Emergency Tooth Care",
+    "Book an Appointment"
+  ]
+}

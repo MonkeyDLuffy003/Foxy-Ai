@@ -1,0 +1,6 @@
+{
+  "summary":  "Comprehensive implementation plan for Foxy — the freelance-ops assistant running as a GitHub Actions workflow under Vyshu, featuring structured Gemini intake, deterministic template matching, template scaffolding/custom skeletons, Telegram notifications for Teja with human-in-the-loop approval, complete state schema (leads.json, templates.json, history.json), and an interactive web operational dashboard with orange foxy branding.",
+  "updatedAt":  "2026-10-24T17:24:00.315601980Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

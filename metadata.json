@@ -1,0 +1,8 @@
+{
+  "name": "Foxy - Freelance Ops Assistant",
+  "description": "Autonomous freelance-ops sub-agent under Vyshu for client intake parsing, deterministic template matching, starter scaffolding, and Telegram human-in-the-loop review.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

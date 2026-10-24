@@ -1,0 +1,63 @@
+[
+  {
+    "id": "gemini-ai-chatbot",
+    "name": "Gemini AI Web Assistant",
+    "type": "chatbot",
+    "platforms": ["web", "node", "react", "html"],
+    "keywords": ["chatbot", "bot", "assistant", "ai chat", "support", "gemini", "customer service", "faq", "conversational", "dental", "clinic", "inquiry"],
+    "features": ["gemini-api", "streaming", "faq-handling", "contact-form", "responsive-chat-widget"],
+    "free_tier_limits": "Runs 100% on Gemini free tier and free GitHub Pages / Vercel hosting.",
+    "repo_url": "https://github.com/vyshu-ops/template-gemini-chatbot",
+    "starter_files": {
+      "README.md": "# {{CLIENT_NAME}} AI Assistant\nBuilt with Google Gemini API & Tailwind CSS.\n\n## Quick Start\n1. Set `GEMINI_API_KEY`\n2. Open `index.html`",
+      "config.json": "{\n  \"clientName\": \"{{CLIENT_NAME}}\",\n  \"botRole\": \"{{BOT_ROLE}}\",\n  \"themeColor\": \"#f97316\",\n  \"welcomeMessage\": \"Hello! Welcome to {{CLIENT_NAME}}. How can I help you today?\"\n}",
+      "app.js": "// Client embed script for {{CLIENT_NAME}}\nconst CLIENT_CONFIG = {\n  brand: '{{CLIENT_NAME}}',\n  role: '{{BOT_ROLE}}'\n};\nconsole.log('Foxy chatbot initialized for', CLIENT_CONFIG.brand);",
+      "index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <title>{{CLIENT_NAME}} Chat Assistant</title>\n  <meta charset='utf-8'/>\n</head>\n<body>\n  <div id='chat-widget'>\n    <h1>{{CLIENT_NAME}} Support</h1>\n  </div>\n</body>\n</html>"
+    }
+  },
+  {
+    "id": "static-landing-page",
+    "name": "Static Fast Portfolio & Landing Page",
+    "type": "app",
+    "platforms": ["web", "html", "tailwind", "vite"],
+    "keywords": ["landing", "portfolio", "website", "single page", "showcase", "agency", "photographer", "freelance site", "static", "lead capture"],
+    "features": ["tailwind", "responsive-grid", "dark-mode", "lead-capture-form", "seo-meta"],
+    "free_tier_limits": "Zero cost. 100% free hosting on GitHub Pages, Netlify, or Cloudflare Pages.",
+    "repo_url": "https://github.com/vyshu-ops/template-landing-page",
+    "starter_files": {
+      "README.md": "# {{CLIENT_NAME}} Showcase Site\nUltra-fast static landing page.\n\nDeploy to GitHub Pages with 0 server costs.",
+      "config.json": "{\n  \"siteTitle\": \"{{CLIENT_NAME}}\",\n  \"tagline\": \"{{CLIENT_TAGLINE}}\",\n  \"accent\": \"#f97316\"\n}",
+      "index.html": "<!DOCTYPE html>\n<html>\n<head>\n  <title>{{CLIENT_NAME}}</title>\n  <meta name='description' content='{{CLIENT_TAGLINE}}'>\n</head>\n<body>\n  <header><h1>{{CLIENT_NAME}}</h1></header>\n</body>\n</html>"
+    }
+  },
+  {
+    "id": "telegram-automation-bot",
+    "name": "Telegram Ops & Alert Bot",
+    "type": "chatbot",
+    "platforms": ["telegram", "python"],
+    "keywords": ["telegram", "tg bot", "telegram bot", "alert bot", "python bot", "notification bot", "crypto alert", "task bot", "price tracker"],
+    "features": ["telegram-bot-api", "asyncio", "command-handler", "scheduled-alerts", "inline-keyboard"],
+    "free_tier_limits": "Runs free on GitHub Actions cron or free serverless container (e.g. Render / fly.io free tier).",
+    "repo_url": "https://github.com/vyshu-ops/template-telegram-bot",
+    "starter_files": {
+      "README.md": "# {{CLIENT_NAME}} Telegram Bot\nAutomated bot using python-telegram-bot.\n\n## Secrets\n- `TELEGRAM_BOT_TOKEN`",
+      "bot.py": "# Telegram Bot for {{CLIENT_NAME}}\nimport os\nfrom telegram.ext import ApplicationBuilder, CommandHandler\n\nTOKEN = os.getenv('TELEGRAM_BOT_TOKEN')\nprint('Initializing bot for {{CLIENT_NAME}}...')",
+      "requirements.txt": "python-telegram-bot==21.10\npython-dotenv==1.0.1"
+    }
+  },
+  {
+    "id": "fastapi-micro-tool",
+    "name": "FastAPI Microservice & Scraper Tool",
+    "type": "app",
+    "platforms": ["web", "python", "fastapi"],
+    "keywords": ["api", "fastapi", "backend", "microservice", "scraper", "automation tool", "rest", "csv parser", "webhook receiver"],
+    "features": ["fastapi", "pydantic-validation", "json-api", "background-tasks", "swagger-docs"],
+    "free_tier_limits": "Runs on Render / Railway free tier or local serverless worker.",
+    "repo_url": "https://github.com/vyshu-ops/template-fastapi-service",
+    "starter_files": {
+      "README.md": "# {{CLIENT_NAME}} Automation API\nFastAPI service ready for production.",
+      "main.py": "from fastapi import FastAPI\napp = FastAPI(title='{{CLIENT_NAME}} API')\n\n@app.get('/')\ndef root():\n    return {'status': 'healthy', 'service': '{{CLIENT_NAME}}'}",
+      "requirements.txt": "fastapi==0.115.0\nuvicorn==0.32.0"
+    }
+  }
+]

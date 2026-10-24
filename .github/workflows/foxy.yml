@@ -1,0 +1,83 @@
+name: Foxy Freelance-Ops Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      client_brief:
+        description: 'Raw Client Requirement / Brief (Paste plain text)'
+        required: true
+        type: string
+        default: 'Need an AI customer support chatbot for my clinic with FAQ answers and appointment guidance.'
+      client_name:
+        description: 'Client or Company Name'
+        required: false
+        type: string
+        default: 'Freelance Inbound Lead'
+      lead_id:
+        description: 'Custom Lead ID (Leave blank for auto-generated timestamp)'
+        required: false
+        type: string
+
+  schedule:
+    # Optional scheduled poll (runs daily or every 12 hours within free tier)
+    - cron: '0 8 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  run-foxy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Foxy Pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CLIENT_BRIEF: ${{ inputs.client_brief }}
+          CLIENT_NAME: ${{ inputs.client_name }}
+          CUSTOM_LEAD_ID: ${{ inputs.lead_id }}
+          APP_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: |
+          echo "🦊 Running Foxy Pipeline (Vyshu Sub-Agent)..."
+          
+          # If triggered on schedule without workflow_dispatch inputs, check if there's an intake/ queue file
+          BRIEF="${CLIENT_BRIEF}"
+          if [ -z "$BRIEF" ] && [ -f "intake_queue.txt" ]; then
+            BRIEF=$(cat intake_queue.txt)
+          fi
+
+          if [ -z "$BRIEF" ]; then
+            echo "No inbound client brief found. Skipping execution."
+            exit 0
+          fi
+
+          ARGS=("--text" "$BRIEF")
+          if [ -n "$CLIENT_NAME" ]; then
+            ARGS+=("--client" "$CLIENT_NAME")
+          fi
+          if [ -n "$CUSTOM_LEAD_ID" ]; then
+            ARGS+=("--lead-id" "$CUSTOM_LEAD_ID")
+          fi
+
+          python -m foxy.pipeline "${ARGS[@]}"
+
+      - name: Commit State & Build Artifacts
+        run: |
+          git config --local user.email "foxy-bot@users.noreply.github.com"
+          git config --local user.name "Foxy (Vyshu Ops Agent)"
+          git add leads.json history.json builds/
+          if git diff --staged --quiet; then
+            echo "No state changes to commit."
+          else
+            git commit -m "chore(foxy): record new build and update leads.json [skip ci]"
+            git push
+          fi
